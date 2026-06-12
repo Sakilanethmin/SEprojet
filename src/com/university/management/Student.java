@@ -1,4 +1,4 @@
-
+package com.university.management;
 public class Student extends Person implements CourseViewable {
     Course[] enrolledCourses = new Course[10];
     int i  = 0;
