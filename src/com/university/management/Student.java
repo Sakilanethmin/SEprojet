@@ -19,7 +19,7 @@ public class Student extends Person implements CourseViewable {
             LOGGER.info("Maximum course limit reached");
         }
     }
-
+    @Override
     public void viewCourses(){
             for(int j = 0; j < i; j++){
                 enrolledCourses[j].displayCourse();
