@@ -15,8 +15,8 @@ public class Front {
         LOGGER.info("1. Attendance");
         LOGGER.info("2. Login");
         LOGGER.info("0. Exist");
-        System.out.println("-----------------------------------------------------------------------------------------");
-        System.out.print("Choose: ");
+        LOGGER.info("-----------------------------------------------------------------------------------------");
+        LOGGER.info("Choose: ");
 
         return input.nextInt();
     }
