@@ -1,7 +1,14 @@
 package com.university.management;
+
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
+
+    // 1. Define the logger instance for this class
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
+
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -37,24 +44,25 @@ public class Main {
                 new Course("COSC12043", "OOP"),
                 new Course("STAT12345", "Probability Distribution")
         };
+        String s1 = "-----------------------------------------------------------------------------------------";
 
         while (true) {
             int choice = Front.menu();
 
             switch (choice) {
                 case 1:
-                    System.out.println("-------------------------------Mark Attendance-------------------------------------------");
+                    logger.info("-------------------------------Mark Attendance-------------------------------------------");
                     obj.markAttendance();
-                    System.out.println("-----------------------------------------------------------------------------------------");
+                    logger.info(s1);
                     break;
 
                 case 2: { // Login
-                    System.out.println("-----------------------------------Login-------------------------------------------------");
-                    System.out.print("Email: ");
+                    logger.info("-----------------------------------Login-------------------------------------------------");
+                    logger.info("Enter Email Below:");
                     String email = input.nextLine();
-                    System.out.print("Password: ");
+                    logger.info("Enter Password Below:");
                     String password = input.nextLine();
-                    System.out.println("-----------------------------------------------------------------------------------------");
+                    logger.info(s1);
 
                     boolean loggedIn = false;
 
@@ -69,41 +77,35 @@ public class Main {
 
                                     boolean running = true;
                                     while (running) {
-                                        System.out.println("_______________________________Choose option_____________________________________________");
-                                        System.out.println("a. View Profile");
-                                        System.out.println("b. View All Courses ");
-                                        System.out.println("c. Enroll new course");
-                                        System.out.println("0. Exit");
-                                        System.out.println("_________________________________________________________________________________________");
+                                        logger.info("_______________________________Choose option_____________________________________________");
+                                        logger.info("a. View Profile\nb. View All Courses\nc. Enroll new course\n0. Exit");
+                                        logger.info(s1);
                                         String option = input.nextLine();
 
                                         switch (option) {
                                             case "a":
                                                 student.displayInfo();
-                                                System.out.println();
-                                                System.out.println("1. Update Name");
-                                                System.out.println("0. Back");
-                                                System.out.print("Choose: ");
+                                                logger.info("\n1. Update Name\n0. Back\nChoose: ");
                                                 String profileOption = input.nextLine();
 
                                                 switch (profileOption) {
                                                     case "1":
-                                                        System.out.print("Enter new name: ");
+                                                        logger.info("Enter new name: ");
                                                         String newUserName = input.nextLine();
                                                         student.setUserName(newUserName);
-                                                        System.out.println("Name updated successfully.");
+                                                        logger.info("Name updated successfully.");
                                                         break;
 
                                                     case "0":
                                                         break;
 
                                                     default:
-                                                        System.out.println("Invalid option");
+                                                        logger.warning("Invalid option");
                                                 }
                                                 break;
 
                                             case "b":
-                                                System.out.println("----------------------------Courses Info--------------------------------------------------");
+                                                logger.info("----------------------------Courses Info--------------------------------------------------");
                                                 for (Course c : courses) {
                                                     c.displayCourse();
                                                 }
@@ -111,9 +113,9 @@ public class Main {
                                                 break;
 
                                             case "c":
-                                                System.out.print("Enter course code: ");
+                                                logger.info("Enter course code: ");
                                                 String cc = input.nextLine();
-                                                System.out.print("Enter course name: ");
+                                                logger.info("Enter course name: ");
                                                 String cn = input.nextLine();
                                                 student.addCourse(new Course(cc, cn));
                                                 break;
@@ -123,7 +125,7 @@ public class Main {
                                                 break;
 
                                             default:
-                                                System.out.println("Invalid option");
+                                                logger.warning("Invalid option");
                                         }
                                     }
                                 }
@@ -142,38 +144,30 @@ public class Main {
 
                                     boolean running = true;
                                     while (running) {
-                                        System.out.println("--------------------------------Choose option--------------------------------------------");
-                                        System.out.println("a. View Profile");
-                                        System.out.println("b. View Courses");
-                                        System.out.println("c. Add new Course");
-                                        System.out.println("d. View Attendance");
-                                        System.out.println("0. Exit");
-                                        System.out.println("-----------------------------------------------------------------------------------------");
+                                        logger.info("--------------------------------Choose option--------------------------------------------");
+                                        logger.info("a. View Profile\nb. View Courses\nc. Add new Course\nd. View Attendance\n0. Exit");
+                                        logger.info(s1);
                                         String option = input.nextLine();
 
                                         switch (option) {
                                             case "a":
                                                 lec.displayInfo();
-                                                System.out.println();
-                                                System.out.println("1. Update Name");
-                                                System.out.println("0. Back");
-                                                System.out.print("Choose: ");
+                                                logger.info("\n1. Update Name\n0. Back\nChoose: ");
                                                 String profileOption = input.nextLine();
 
                                                 switch (profileOption) {
                                                     case "1":
-                                                        System.out.print("Enter new name: ");
+                                                        logger.info("Enter new name: ");
                                                         String newUserName = input.nextLine();
                                                         lec.setUserName(newUserName);
-                                                        System.out.println("Name updated successfully.");
+                                                        logger.info("Name updated successfully.");
                                                         break;
-
 
                                                     case "0":
                                                         break;
 
                                                     default:
-                                                        System.out.println("Invalid option");
+                                                        logger.warning("Invalid option");
                                                 }
                                                 break;
 
@@ -182,9 +176,9 @@ public class Main {
                                                 break;
 
                                             case "c":
-                                                System.out.print("Course code: ");
+                                                logger.info("Course code: ");
                                                 String cc = input.nextLine();
-                                                System.out.print("Course Name: ");
+                                                logger.info("Course Name: ");
                                                 String cn = input.nextLine();
                                                 lec.addNewCourse(cc, cn);
                                                 break;
@@ -198,7 +192,7 @@ public class Main {
                                                 break;
 
                                             default:
-                                                System.out.println("Invalid option");
+                                                logger.warning("Invalid option");
                                         }
                                     }
                                 }
@@ -207,17 +201,17 @@ public class Main {
                     }
 
                     if (!loggedIn) {
-                        System.out.println("Email or password does not match.");
+                        logger.log(Level.WARNING, "Email or password does not match.");
                     }
                     break;
                 }
 
                 case 0:
-                    System.out.println("Exiting program...");
+                    logger.info("Exiting program...");
                     return;
 
                 default:
-                    System.out.println("Invalid option");
+                    logger.warning("Invalid option");
             }
         }
     }
