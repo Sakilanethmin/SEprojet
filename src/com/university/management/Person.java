@@ -2,15 +2,10 @@ package com.university.management;
 public class Person {
     protected String userId;
     protected String userName;
-    protected String Email;
-    protected String Password;
+    protected String email;
+    protected String password;
 
-    Person(String userId,String userName, String Email, String Password){
-        this.userId = userId;
-        this.userName = userName;
-        this.Email = Email;
-        this.Password = Password;
-    }
+
     public String getEmail(){
         return Email;
     }
