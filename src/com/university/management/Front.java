@@ -11,10 +11,10 @@ public class Front {
 
     public static int menu(){
         LOGGER.info("-------------------------------------Menu------------------------------------------------");
-        System.out.println("Choose option: ");
-        System.out.println("1. Attendance");
-        System.out.println("2. Login");
-        System.out.println("0. Exist");
+        LOGGER.info("Choose option: ");
+        LOGGER.info("1. Attendance");
+        LOGGER.info("2. Login");
+        LOGGER.info("0. Exist");
         System.out.println("-----------------------------------------------------------------------------------------");
         System.out.print("Choose: ");
 
