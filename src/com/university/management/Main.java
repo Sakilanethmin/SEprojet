@@ -45,6 +45,7 @@ public class Main {
                 new Course("STAT12345", "Probability Distribution")
         };
         String s1 = "-----------------------------------------------------------------------------------------";
+        String s2 = "Invalid option";
 
         while (true) {
             int choice = Front.menu();
@@ -100,7 +101,7 @@ public class Main {
                                                         break;
 
                                                     default:
-                                                        logger.warning("Invalid option");
+                                                        logger.warning(s2);
                                                 }
                                                 break;
 
@@ -125,7 +126,7 @@ public class Main {
                                                 break;
 
                                             default:
-                                                logger.warning("Invalid option");
+                                                logger.warning(s2);
                                         }
                                     }
                                 }
@@ -167,7 +168,7 @@ public class Main {
                                                         break;
 
                                                     default:
-                                                        logger.warning("Invalid option");
+                                                        logger.warning(s2);
                                                 }
                                                 break;
 
@@ -192,7 +193,7 @@ public class Main {
                                                 break;
 
                                             default:
-                                                logger.warning("Invalid option");
+                                                logger.warning(s2);
                                         }
                                     }
                                 }
@@ -211,7 +212,7 @@ public class Main {
                     return;
 
                 default:
-                    logger.warning("Invalid option");
+                    logger.warning(s2);
             }
         }
     }
