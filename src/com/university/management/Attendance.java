@@ -1,8 +1,11 @@
 package com.university.management;
 import java.time.LocalTime;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class attendance {
+public class Attendance {
+    private static final Logger logger = Logger.getLogger(Attendance.class.getName());
     String[] children = {"rajitha", "prasanna", "sakila", "lisara"};
     String[] attendanceTime = new String[children.length]; // store time
 
@@ -11,7 +14,7 @@ public class attendance {
         Scanner sc = new Scanner(System.in);
        while (true) {
 
-           System.out.print("Enter name (or 'exit'): ");
+           logger.info("Enter name (or 'exit'): ");
             String name = sc.nextLine();
            if (name.equalsIgnoreCase("exit")) {
                 break;
@@ -25,8 +28,7 @@ public class attendance {
                     LocalTime time = LocalTime.now();
                     attendanceTime[i] = time.toString();
 
-                    System.out.println("Attendance marked for " + children[i] +
-                            " at " + attendanceTime[i]);
+                    logger.log(Level.INFO, "Attendance marked for {0} at {1}", new Object[]{children[i], attendanceTime[i]});
 
                     found = true;
                     break;
@@ -34,17 +36,17 @@ public class attendance {
             }
 
             if (!found) {
-                System.out.println("Name not found!");
+                logger.info("Name not found!");
             }
         }
     }
 
     void displayAttendance() {
-        System.out.println("-------------------------------- Attendance List ---------------------------------------");
+        logger.info ("-------------------------------- Attendance List ---------------------------------------");
         for (int i = 0; i < children.length; i++) {
             String time = (attendanceTime[i] == null) ? "Absent" : attendanceTime[i];
-            System.out.println("-----------------------------------------------------------------------------------------");
-            System.out.println(":" + children[i] + " | " + time + "|");
+            logger.info("-----------------------------------------------------------------------------------------");
+            logger.log(Level.INFO, ":{0} | {1}|", new Object[]{children[i], time});
         }
     }
 }
