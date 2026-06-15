@@ -1,3 +1,4 @@
+package com.university.management;
 public class Login {
     protected String email;
     protected String password;

@@ -1,3 +1,4 @@
+package com.university.management;
 public class Course{
     protected String courseCode;
     protected String courseName;

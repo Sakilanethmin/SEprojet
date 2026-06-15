@@ -1,3 +1,4 @@
+package com.university.management;
 public class Person {
     protected String userId;
     protected String userName;

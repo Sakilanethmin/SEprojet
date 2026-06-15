@@ -1,4 +1,4 @@
-
+package com.university.management;
 import java.time.LocalTime;
 import java.util.Scanner;
 

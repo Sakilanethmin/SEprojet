@@ -1,3 +1,4 @@
+package com.university.management;
 import java.util.Scanner;
 
 public class Main {
