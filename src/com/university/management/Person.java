@@ -5,17 +5,13 @@ public class Person {
     protected String email;
     protected String password;
 
+    public Person(String userId, String userName, String email, String password) {
+        this.userId = userId;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+    }
 
-    public String getEmail(){
-        return Email;
-    }
-    public String getPassword(){
-        return Password;
-    }
-    public void displayInfo(){
-        System.out.println("User Name: " +userName);
-        System.out.println("User Id: " +userId);
-    }
     public void setUserName(String newUserName){
         this.userName = newUserName;
     }
