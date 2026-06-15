@@ -1,5 +1,8 @@
 package com.university.management;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class Course{
+    private static final Logger logger = Logger.getLogger(Course.class.getName());
     protected String courseCode;
     protected String courseName;
 
@@ -9,8 +12,8 @@ public class Course{
     }
 
     public void displayCourse(){
-        System.out.println("Course code: " +courseCode);
-        System.out.println("Course Name: " +courseName);
+        logger.log(Level.INFO, "Course code: {0}", courseCode);
+        logger.log(Level.INFO, "Course Name: {0}", courseName);
     }
 
 }
