@@ -1,7 +1,12 @@
 package com.university.management;
 import java.util.Scanner;
+
 public class Front {
     static Scanner input = new Scanner(System.in);
+
+    private Front() {
+    }
+
     public static int menu(){
         System.out.println("-------------------------------------Menu------------------------------------------------");
         System.out.println("Choose option: ");
