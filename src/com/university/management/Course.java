@@ -1,18 +1,21 @@
 package com.university.management;
-public class Course{
+
+import java.util.logging.Logger;
+
+public class Course {
+
+    private static final Logger LOGGER = Logger.getLogger(Course.class.getName());
+
     protected String courseCode;
     protected String courseName;
 
-    public Course(String courseCode, String courseName){
+    public Course(String courseCode, String courseName) {
         this.courseCode = courseCode;
         this.courseName = courseName;
     }
 
-    public void displayCourse(){
-        System.out.println("Course code: " +courseCode);
-        System.out.println("Course Name: " +courseName);
+    public void displayCourse() {
+        LOGGER.info("Course code: " + courseCode);
+        LOGGER.info("Course Name: " + courseName);
     }
-
 }
-
-
